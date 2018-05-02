@@ -1,6 +1,7 @@
 .main {
   max-width: 932px;
   margin: 16px auto 0;
+  padding-bottom: 60px;
 }
 
 .main .card {
@@ -69,20 +70,37 @@
   border-top-width: 10px;
 }
 
+a.more {
+  display: inline-block;
+  padding: 16px;
+}
+
+a.more > * {
+  vertical-align: middle;
+}
+
+a.more img.arrow {
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+}
+
 .main > section.popular .popular-left {
   width: 632px;
-  height: 300px;
+  height: 700px;
   float: left;
 }
 
 .main > section.popular .popular-left > .row1 > .col1 {
   width: calc(100% /3*2 - 16px);
   float: left;
+  height: 330px;
 }
 
 .main > section.popular .popular-left > .row1 > .col2 {
   width: calc(100% /3 - 16px);
   float: left;
+  height: 330px;
 }
 
 .main > section.popular .popular-left > .row1 > .col2 img {
@@ -98,11 +116,6 @@
   width: calc(50% - 16px);
   height: 336px;
   float: left;
-}
-
-.main > section.popular .popular-left > .row3 {
-  background-color: skyblue;
-  height: 100px;
 }
 
 .main > section.popular .popular-right {
@@ -156,17 +169,48 @@
   overflow: hidden;
 }
 
-a.more {
+.main > section.last-videos .card {
+  padding: 0;
+}
+
+.main > section.last-videos .title-container {
   padding: 16px;
-  display: inline-block;
+  position: relative;
+  border-bottom: 1px solid #ccc;
 }
 
-a.more > * {
-  vertical-align: middle;
+.main > section.last-videos .title-container h2.card-title {
+  font-size: 24px;
+  margin: 0;
 }
 
-a.more img.arrow {
-  width: 32px;
-  height: 32px;
-  margin-right: 8px;
+.main > section.last-videos .title-container a.more {
+  position: absolute;
+  top: 0;
+  right: 16px;
+}
+
+.main > section.last-videos .content .video-left {
+  float: left;
+  width: 80%;
+  padding: 16px;
+  box-sizing: border-box;
+  border-right: 1px solid #ccc;
+}
+
+.main > section.last-videos .content .video-left video {
+  width: 100%;
+}
+
+.main > section.last-videos .content .video-right {
+  float: left;
+  width: 20%;
+  padding: 16px;
+  height: 462px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.main > section.last-videos .content .video-right .title {
+  font-size: 13px;
 }

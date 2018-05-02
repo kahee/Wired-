@@ -1,9 +1,12 @@
 @import 'variables';
 $card-margin: 16px;
 $font-size-big-card-title: 24px;
+
+
 .main {
   max-width: 932px;
   margin: $card-margin auto 0;
+  padding-bottom: 60px;
 }
 .main .card {
   // 그림자 효과
@@ -74,22 +77,42 @@ $font-size-big-card-title: 24px;
     border-top-width: 10px;
   }
 }
+a.more {
+  // 자식요소들의 높이를 자신의 높이로 갖기 위해
+  // inline-block설정
+  display: inline-block;
+  padding: 16px;
+
+  // 모든 자식들(인라인 요소)간의 정렬은 수직 중앙 정렬
+  > * {
+    vertical-align: middle;
+  }
+
+  img.arrow {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+  }
+}
 .main > section.popular {
   .popular-left {
     width: 632px;
-    height: 300px;
+    height: 700px;
     float: left;
 
     > .row1 {
+      $col-height: 330px;
       > .col1 {
         // calc에 Sass변수 쓸때는 #{변수명}을 사용
         width: calc(100% /3*2 - #{$card-margin});
         float: left;
+        height: $col-height;
       }
 
       > .col2 {
         width: calc(100% /3 - #{$card-margin});
         float: left;
+        height: $col-height;
 
         img {
           width: 100%;
@@ -110,15 +133,11 @@ $font-size-big-card-title: 24px;
         float: left;
       }
     }
-
-    > .row3 {
-      background-color: skyblue;
-      height: 100px;
-    }
   }
 
   .popular-right {
     width: 300px;
+
     float: left;
     margin: 0;
     padding: 0;
@@ -160,17 +179,52 @@ $font-size-big-card-title: 24px;
     }
   }
 }
-a.more {
-  // 자식요소들의 높이를 자신의 높이로 갖기 위해 inline-block설정
-  padding: 16px;
-  display: inline-block;
-  // 모든 자식들간의 정렬은 수직 중앙
-  > * {
-    vertical-align: middle;
+
+.main > section.last-videos {
+  .card {
+    // .title-container의 하단에
+    // 전체 가로 길이만큼의 외곽선이 필요하므로
+    // 패딩을 없애고 자식요소에 각각 따로 패딩 지정
+    padding: 0;
   }
-  img.arrow {
-    width: 32px;
-    height: 32px;
-    margin-right: 8px;
+  .title-container {
+    padding: 16px;
+    position: relative;
+    border-bottom: 1px solid #ccc;
+
+    h2.card-title {
+      font-size: $font-size-big-card-title;
+      margin: 0;
+    }
+    a.more {
+      position: absolute;
+      top: 0;
+      right: 16px;
+    }
+  }
+  .content {
+    .video-left {
+      float: left;
+      width: 80%;
+      padding: 16px;
+      box-sizing: border-box;
+      border-right: 1px solid #ccc;
+
+      video {
+        width: 100%;
+      }
+    }
+    .video-right {
+      float: left;
+      width: 20%;
+      padding: 16px;
+      height: 462px;
+      overflow-y: auto;
+      box-sizing: border-box;
+
+      .title {
+        font-size: 13px;
+      }
+    }
   }
 }
