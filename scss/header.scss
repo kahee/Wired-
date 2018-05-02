@@ -31,9 +31,7 @@
     // position: relative;
     margin: 0 auto;
     text-align: center;
-
-
-    // a요소 엔아 있는 img 가로크기 160px 을 갖도록 함 
+    // a요소 엔아 있는 img 가로크기 160px 을 갖도록 함 ``
     a.logo > img {
       width:160px;
     }
@@ -45,6 +43,11 @@
     position: absolute;
     right: 20px;
     top: 0;
+
+    a.subscribe {
+      font-size: 10px;
+    }
+
   }
 }
 

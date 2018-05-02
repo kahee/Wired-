@@ -1,0 +1,79 @@
+.main {
+  max-width: 932px;
+  margin: 0 auto;
+}
+
+.main .card {
+  box-shadow: -1px 0 2px 0 rgba(0, 0, 0, 0.12), 1px 0 2px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
+  padding: 16px;
+  box-sizing: border-box;
+  border-top: 3px solid #000;
+}
+
+.main .card img {
+  width: 100%;
+}
+
+.main .card .topic {
+  font-size: 10px;
+}
+
+.main .card .title {
+  font-family: 'Futura';
+  font-size: 18px;
+}
+
+.main .card .author {
+  font-size: 10px;
+}
+
+.main > section.popular .popular-left {
+  width: 632px;
+  height: 300px;
+  float: left;
+}
+
+.main > section.popular .popular-left > .row1 > .col1 {
+  width: 60%;
+  float: left;
+}
+
+.main > section.popular .popular-left > .row1 > .col2 {
+  width: 40%;
+  float: left;
+}
+
+.main > section.popular .popular-left > .row1 > .col2 img {
+  width: 100%;
+}
+
+.main > section.popular .popular-left > .row2 > .col1 {
+  width: 50%;
+  height: 100px;
+  float: left;
+  background-color: yellow;
+}
+
+.main > section.popular .popular-left > .row2 > .col1 > .row1 {
+  height: 50%;
+  background-color: orange;
+}
+
+.main > section.popular .popular-left > .row2 > .col1 > .row2 {
+  height: 50%;
+  background-color: purple;
+}
+
+.main > section.popular .popular-left > .row2 > .col2 {
+  width: 50%;
+  height: 100px;
+  float: left;
+  background-color: green;
+}
+
+.main > section.popular .popular-right {
+  width: 300px;
+  height: 300px;
+  background-color: red;
+  float: left;
+}
