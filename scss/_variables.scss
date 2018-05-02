@@ -1,0 +1,7 @@
+@mixin max-line($line-number) {
+  // webkit기반 엔진에서 최대 문단 라인수를 정하고 싶을 때 사용
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line-number;
+  display: -webkit-box;
+  overflow: hidden;
+}

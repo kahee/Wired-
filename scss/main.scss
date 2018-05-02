@@ -1,8 +1,10 @@
+@import 'variables';
+$card-margin: 16px;
+$font-size-big-card-title: 24px;
 .main {
   max-width: 932px;
-  margin: 0 auto;
+  margin: $card-margin auto 0;
 }
-
 .main .card {
   // 그림자 효과
   box-shadow: -1px 0 2px 0 rgba(0,0,0,0.12), 1px 0 2px 0 rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.24);
@@ -10,26 +12,68 @@
   // 내부 패딩과 보더를 포함한 가로/세로크기 포함
   box-sizing: border-box;
   border-top: 3px solid #000;
+  margin: 0 16px 16px 0;
 
   img {
     width: 100%;
   }
-
   .topic {
     font-size: 10px;
   }
-
   .title {
     // 폰트를 다르게 지정하기 위해서
     font-family: 'Futura';
     font-size: 18px;
+    line-height: 1.2;
   }
 
   .author {
     font-size: 10px;
   }
-}
 
+  &.right-image {
+    height: 160px;
+
+    & img {
+      width: inherit;
+      height: 100%;
+      float: right;
+    }
+  }
+
+  &.left-image {
+    height: 160px;
+
+    // 제목이 세로로 너무 길어지지 않도록 max-height 지정
+    .title {
+      max-height: 86px;
+      overflow: hidden;
+    }
+    .author {
+      float: left;
+    }
+
+    & img {
+      width: inherit;
+      max-width: 50%;
+      max-height: 100%;
+      float: left;
+      margin-right: 10px;
+      margin-bottom: 100%;
+    }
+  }
+
+
+  &.no-image {
+    .title {
+      font-size: 36px;
+    }
+  }
+
+  &.bold-top {
+    border-top-width: 10px;
+  }
+}
 .main > section.popular {
   .popular-left {
     width: 632px;
@@ -38,54 +82,95 @@
 
     > .row1 {
       > .col1 {
-        width: 60%;
+        // calc에 Sass변수 쓸때는 #{변수명}을 사용
+        width: calc(100% /3*2 - #{$card-margin});
         float: left;
       }
 
       > .col2 {
-        width: 40%;
+        width: calc(100% /3 - #{$card-margin});
         float: left;
 
         img {
           width: 100%;
-
         }
+
       }
     }
 
     > .row2 {
       > .col1 {
-        width: 50%;
-        height: 100px;
+        width: calc(50% - #{$card-margin});
         float: left;
-        background-color: yellow;
-
-        > .row1 {
-          height: 50%;
-          background-color: orange;
-        }
-
-        > .row2 {
-          height: 50%;
-          background-color: purple;
-        }
       }
 
       > .col2 {
-        width: 50%;
-        height: 100px;
+        width: calc(50% - #{$card-margin});
+        height:336px;
         float: left;
-        background-color: green;
       }
+    }
+
+    > .row3 {
+      background-color: skyblue;
+      height: 100px;
     }
   }
 
   .popular-right {
     width: 300px;
-    height: 300px;
-    background-color: red;
     float: left;
+    margin: 0;
+    padding: 0;
 
+    h2.card-ul-title {
+      font-size: $font-size-big-card-title;
+      padding: 16px;
+      margin: 0;
+    }
 
+    > ul {
+      padding: 0 16px;
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      > li {
+        border-bottom: 1px solid black;
+        height: 75px;
+        padding: 16px 0;
+
+        &:last-child {
+          border: none;
+        }
+      }
+
+      & img {
+        float: left;
+        width: 75px;
+        height: 75px;
+        margin-right: 16px;
+      }
+      .title {
+        font-size: 14px;
+        @include max-line(3);
+      }
+
+      .author {
+        @include max-line(1);
+      }
+    }
+  }
+}
+a.more {
+  // 자식요소들의 높이를 자신의 높이로 갖기 위해 inline-block설정
+  padding: 16px;
+  display: inline-block;
+  // 모든 자식들간의 정렬은 수직 중앙
+  > * {
+    vertical-align: middle;
+  }
+  img.arrow {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
   }
 }
