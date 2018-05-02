@@ -14,3 +14,22 @@ ul, ol {
   margin: 0;
   padding: 0;
 }
+
+.middle-parent:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-left: -0.25em;
+}
+
+.middle-child {
+  vertical-align: middle;
+}
+
+.clearfix::after {
+  content: '';
+  height: 0;
+  display: block;
+  clear: both;
+}
